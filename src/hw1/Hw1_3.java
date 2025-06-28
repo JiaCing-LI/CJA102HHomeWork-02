@@ -4,6 +4,17 @@ package hw1;
 public class Hw1_3 {
 	public static void main(String[] args) {
 		int totalSeconds = 256559;// 總秒數
+
+		// 呼叫方法顯示時間結果
+		printTimeFromSeconds(totalSeconds);
+	}
+
+	/**
+	 * 將總秒數轉換為天、時、分、秒，並輸出。
+	 * 
+	 * @param totalSeconds 總秒數
+	 */
+	public static void printTimeFromSeconds(int totalSeconds) {
 		int day, hour, min, sec;// 宣告存放 天、時、分、秒
 		// 一天有24*60*60 = 86400 秒
 		day = totalSeconds / 86400;// 計算有幾天
@@ -13,7 +24,7 @@ public class Hw1_3 {
 		remainingSeconds %= 3600;// 再更新剩餘秒數（扣掉小時部分）
 		min = remainingSeconds / 60;// 一分鐘有 60 秒，接著取出幾分鐘
 		sec = remainingSeconds % 60;// 再更新剩餘秒數（扣掉小時部分）
-		// 印出最終結果
+
 		System.out.println(totalSeconds + "秒為:");
 		System.out.println(day + "天" + hour + "時" + min + "分" + sec + "秒");
 	}

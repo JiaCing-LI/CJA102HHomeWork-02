@@ -1,18 +1,25 @@
 package hw1;
-// 請寫一隻程式，利用System.out.println()印出以下三個運算式結果：
-//5 + 5
-//5 + ‘5’
-//5 + “5
+
+/**
+ * 請寫一隻程式，利用System.out.println()印出以下三個運算式結果： 5 + 5 5 + ‘5’ 5 + “5
+ */
 public class Hw1_6 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 整數加法
+		// 結果：10（int）
 		System.out.println(5 + 5);
-		//兩個整數相加，結果為10
+
+		// 字元與整數加法
+		// '5' 為 char，其 Unicode 編碼為 53（可用 (int)'5' 檢查）
+		// 5 + 53 = 58
+		// 結果：58（int）
 		System.out.println(5 + '5');
-		//'5'為字元，Unicode為53，之後整數5+53為58
+
+		// 字串與整數加法（字串串接
+		// "5" 為 String，5 為 int，遇到字串 + 任意型別 → 皆轉為字串串接
+		// 結果："55"（String）
 		System.out.println(5 + "5");
-		//"5"為字串，前一個5轉型字串，變為字串相加為55
 	}
 
 }
