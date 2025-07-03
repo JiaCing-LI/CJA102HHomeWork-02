@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Hw3_3 {
 	// 進階題未寫
-	static Scanner scanner = new Scanner(System.in); // 全域共用只建一次
+	static Scanner sc = new Scanner(System.in); // 全域共用只建一次
 	/**
 	 * 主程式進入點
 	 * 
@@ -15,11 +15,12 @@ public class Hw3_3 {
 	 */
 	public static void main(String[] args) {
 		LottoFilter();
-		scanner.close();
+		sc.close();
 	}
 	public static void LottoFilter() {
 		int hate = getHateNum(); // 1~9
-		printAvailableNumbers(hate);
+		printAvailableNum(hate);
+		getRandomNum(hate);
 	}
 	/**
 	 * 取得使用者輸入的數字
@@ -30,8 +31,8 @@ public class Hw3_3 {
 		int hate = 0;
 		System.out.print("阿文...請輸入你討厭哪個數字?(1~9)：");
 		while (true) {
-			if (scanner.hasNextInt()) {
-				hate = scanner.nextInt();
+			if (sc.hasNextInt()) {
+				hate = sc.nextInt();
 				if (hate >= 1 && hate <= 9) {
 					break;
 				} else {
@@ -39,7 +40,7 @@ public class Hw3_3 {
 				}
 			} else {
 				System.out.print("請輸入有效整數：");
-				scanner.next(); // 清除錯誤輸入
+				sc.next(); // 清除錯誤輸入
 			}
 		}
 		System.out.println("你討厭的數字是：" + hate);
@@ -51,7 +52,7 @@ public class Hw3_3 {
 	 * @param hate
 	 *            你討厭的數字
 	 */
-	public static void printAvailableNumbers(int hate) {
+	public static void printAvailableNum(int hate) {
 		int count = 0;
 		for (int k = 1; k <= 49; k++) {
 			int tens = k / 10; // 取得十位數
@@ -66,5 +67,27 @@ public class Hw3_3 {
 			}
 		}
 		System.out.printf("總共有 %d 個數字可選%n", count);
+	}
+	/**
+	 * (進階挑戰:輸入不要的數字後,直接亂數印出6個號碼且不得重複)
+	 */
+	public static void getRandomNum(int hate) {
+		boolean[] used = new boolean[50]; // 1~49
+		int count = 0;
+		System.out.println("隨機6組數字:");
+		while (count < 6) {
+			int n = (int) (Math.random() * 49) + 1; // 1~49
+			int tens = n / 10;
+			int units = n % 10;
+
+			if ((tens == hate || units == hate) || used[n]) {
+				continue; // 跳過討厭數字或已抽過號碼
+			}
+
+			System.out.printf("%2d ", n);
+			used[n] = true;
+			count++;
+		}
+		System.out.println();
 	}
 }
