@@ -6,7 +6,8 @@ public class Hw1_1 {
 	/**
 	 * 執行加總與乘積計算。
 	 * 
-	 * @param args 執行參數（此處未使用）
+	 * @param args
+	 *            執行參數（此處未使用）
 	 */
 
 	public static void main(String[] args) {
@@ -22,8 +23,10 @@ public class Hw1_1 {
 	/**
 	 * 計算兩整數之和
 	 * 
-	 * @param x 第一個整數
-	 * @param y 第二個整數
+	 * @param x
+	 *            第一個整數
+	 * @param y
+	 *            第二個整數
 	 * @return x + y 的結果
 	 */
 	public static int getSum(int x, int y) {

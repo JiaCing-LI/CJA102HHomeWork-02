@@ -72,7 +72,7 @@ public class Hw3_3 {
 	 * (進階挑戰:輸入不要的數字後,直接亂數印出6個號碼且不得重複)
 	 */
 	public static void getRandomNum(int hate) {
-		boolean[] used = new boolean[50]; // 1~49
+		boolean[] used = new boolean[50]; // 1~49 的使用紀錄
 		int count = 0;
 		System.out.println("隨機6組數字:");
 		while (count < 6) {
