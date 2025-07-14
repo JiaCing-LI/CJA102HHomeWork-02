@@ -19,10 +19,12 @@ public class Hw4_6 {
 
 			int max = studentScores[i][0];// i=exam 第i場考試的初始最大分設為第一位同學的成績
 			// 先找出這一場考試的最高分
+
 			for (int j = 1; j < studentScores[i].length; j++) {
-				if (studentScores[i][j] > max) {
-					max = studentScores[i][j];
-				}
+				max = Math.max(max, studentScores[i][j]);
+				// if (studentScores[i][j] > max) {
+				// max = studentScores[i][j];
+				// }
 			}
 			// 再次迴圈：找出所有分數 == max 的學生，次數 +1
 			for (int j = 0; j < studentScores[i].length; j++) {

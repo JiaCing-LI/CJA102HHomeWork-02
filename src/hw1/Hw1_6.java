@@ -17,7 +17,7 @@ public class Hw1_6 {
 		System.out.println(5 + '5');
 
 		// 字串與整數加法（字串串接
-		// "5" 為 String，5 為 int，遇到字串 + 任意型別 → 皆轉為字串串接
+		// "5" 為 String，5 為 int，遇到字串 + 任意型別 -> 皆轉為字串串接
 		// 結果："55"（String）
 		System.out.println(5 + "5");
 	}

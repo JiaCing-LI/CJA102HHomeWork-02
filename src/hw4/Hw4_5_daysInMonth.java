@@ -23,7 +23,7 @@ public class Hw4_5_daysInMonth {
 	 * 
 	 * @param month使用者輸入的月
 	 * @param day使用者輸入的天
-	 * @return true:日期正確 false:日期錯誤
+	 * @return
 	 */
 	public boolean isValidDate(int month, int day) {
 		if (month < 1 || month > 12) {

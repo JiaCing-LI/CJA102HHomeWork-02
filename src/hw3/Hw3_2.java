@@ -22,7 +22,7 @@ public class Hw3_2 {
 		Scanner userGuess = new Scanner(System.in);
 
 		int answer = (int) (Math.random() * 10);
-		int guess;
+		int guess = -1;
 		while (true) {
 			System.out.println("開始猜數字吧(0~9)");
 			if (userGuess.hasNextInt()) {
