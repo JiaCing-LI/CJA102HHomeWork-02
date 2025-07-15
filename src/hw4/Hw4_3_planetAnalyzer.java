@@ -27,7 +27,6 @@ public class Hw4_3_planetAnalyzer {
 			String word = planets[i];
 			word = word.toLowerCase();// 轉換小寫，
 			for (int j = 0; j < word.length(); j++) {
-				char ch = word.charAt(j);
 				if (isVowel(word.charAt(j))) {
 					count++;
 				}

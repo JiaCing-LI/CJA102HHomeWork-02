@@ -3,7 +3,7 @@ package hw5;
 import java.util.Random;
 
 public class GenAuthCode {
-	private String code;
+	private final String code;
 
 	public GenAuthCode() {
 		String chars = generateLegalChars(); // A-Z a-z 0-9 共 62 字元
