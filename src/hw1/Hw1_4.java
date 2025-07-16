@@ -7,7 +7,6 @@ import java.math.RoundingMode;
  * 請定義一個常數為3.1415(圓周率)，並計算半徑為5的圓面積與圓周長
  */
 public class Hw1_4 {
-
 	public static void main(String[] args) {
 
 		// === double 計算版本 ===
@@ -36,13 +35,15 @@ public class Hw1_4 {
 		BigDecimal piBD = new BigDecimal(radiusText);
 
 		// 計算圓周長：2 × pi × r, BigDecimal 的乘法方法:multiply();
-		BigDecimal circumferenceBD = piBD.multiply(radiusBD).multiply(new BigDecimal("2"));
+		BigDecimal circumferenceBD = piBD.multiply(radiusBD)
+				.multiply(new BigDecimal("2"));
 
 		// 園面積 =pi * r * r,
 		BigDecimal areaBD = piBD.multiply(radiusBD).multiply(radiusBD);
 		// 印出 BigDecimal 結果（四捨五入至小數第 4 位）
 		// setscale(int ,RoundingMode)方法 (第幾位,捨入模式) (4,四捨五入)
-		System.out.println("圓周長為:" + circumferenceBD.setScale(4, RoundingMode.HALF_UP));
+		System.out.println(
+				"圓周長為:" + circumferenceBD.setScale(4, RoundingMode.HALF_UP));
 		System.out.println("圓面積為:" + areaBD.setScale(4, RoundingMode.HALF_UP));
 	}
 }

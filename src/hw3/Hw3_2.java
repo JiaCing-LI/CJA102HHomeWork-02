@@ -1,7 +1,6 @@
 package hw3;
 
 import java.util.Scanner;
-
 public class Hw3_2 {
 	// class GuessNuberGame
 	/**

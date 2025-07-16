@@ -4,7 +4,6 @@ package hw1;
 public class Hw1_3 {
 	public static void main(String[] args) {
 		int totalSeconds = 256559;// 總秒數
-
 		// 呼叫方法顯示時間結果
 		printTimeFromSeconds(totalSeconds);
 	}
@@ -12,9 +11,10 @@ public class Hw1_3 {
 	/**
 	 * 將總秒數轉換為天、時、分、秒，並輸出。
 	 * 
-	 * @param totalSeconds 總秒數
+	 * @param totalSeconds
+	 *            總秒數
 	 */
-	public static void printTimeFromSeconds(int totalSeconds) {
+	private static void printTimeFromSeconds(int totalSeconds) {
 		int day, hour, min, sec;// 宣告存放 天、時、分、秒
 		// 一天有24*60*60 = 86400 秒
 		day = totalSeconds / 86400;// 計算有幾天
