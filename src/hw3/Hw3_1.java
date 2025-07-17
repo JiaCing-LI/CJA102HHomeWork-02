@@ -15,13 +15,15 @@ public class Hw3_1 {
 	 * (提示:Scanner,三角形成立條件,判斷式if else) (進階功能:加入直角三角形的判斷)
 	 */
 	public static void main(String[] args) {
-		startTriangle();
+		try (Scanner sc = new Scanner(System.in)) {
+			startTriangle(sc);
+		}
 	}
 	/**
 	 * 執行三角形邊長輸入與屬性判斷流程，並輸出結果
 	 */
-	public static void startTriangle() {
-		Result<int[], String> result = readTriSides();
+	public static void startTriangle(Scanner sc) {
+		Result<int[], String> result = readTriSides(sc);
 
 		if (result.isOk()) {
 			int[] sides = result.getOk();
@@ -61,32 +63,30 @@ public class Hw3_1 {
 	 * 
 	 * @return 三邊整數陣列（長度為3）或錯誤訊息
 	 */
-	private static Result<int[], String> readTriSides() {
-		try (Scanner sc = new Scanner(System.in)) {
-			int[] triSides = new int[3];
-			String[] labels = {"第一", "第二", "第三"};
+	private static Result<int[], String> readTriSides(Scanner sc) {
+		int[] triSides = new int[3];
+		String[] labels = {"第一", "第二", "第三"};
 
-			for (int i = 0; i < 3; i++) {
-				Result<Integer, String> inputResult = readPositiveInt(labels[i],
-						sc);
-				if (!inputResult.isOk()) {
-					return Result.err(inputResult.getErr());
-				}
-				triSides[i] = inputResult.getOk();
+		for (int i = 0; i < 3; i++) {
+			Result<Integer, String> inputResult = readPositiveInt(labels[i],
+					sc);
+			if (!inputResult.isOk()) {
+				return Result.err(inputResult.getErr());
 			}
-			return Result.ok(triSides);
+			triSides[i] = inputResult.getOk();
 		}
+		return Result.ok(triSides);
 	}
 	/**
 	 * 判斷輸入的三邊是否構成三角形，並分類
-	 * 
+	 *
 	 * @param a
 	 *            第一邊長
 	 * @param b
 	 *            第二邊長
 	 * @param c
 	 *            第三邊長
-	 * @return 判斷結果字串
+	 * @return 三角形類型描述字串（正三角形、直角三角形、等腰三角形）
 	 */
 	public static String triangleChecker(int a, int b, int c) {
 		// 排序三邊：讓 a <= b <= c
@@ -103,14 +103,18 @@ public class Hw3_1 {
 		if (a == b && b == c) {
 			return "正三角形";
 		}
+		// 直角三角形：a² + b² = c²
+		if (a * a + b * b == c * c) {
+			if (a == b || b == c) {
+				return "等腰直角三角形";
+			}
+			return "直角三角形";
+		}
 		// 等腰三角形（兩邊相等）
 		if (a == b || b == c) {
 			return "等腰三角形";
 		}
-		// 直角三角形：a² + b² = c²
-		if (a * a + b * b == c * c) {
-			return "直角三角形";
-		}
+
 		// 其他三角形
 		return "其他三角形";
 	}

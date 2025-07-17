@@ -1,7 +1,6 @@
 package hw3;
 
 import java.util.Scanner;
-
 /**
  * 阿文很喜歡簽大樂透(1~49),但他是個善變的人,上次討厭數字是4,但這次他想要依心情決定討
  * 厭哪個數字,請您設計一隻程式,讓阿文可以輸入他不想要的數字(1~9),畫面會顯示他可以選擇 的號碼與總數
@@ -28,6 +27,10 @@ public class Hw3_3 {
 	 * 
 	 * @return 使用者討厭的數字(0~9)
 	 */
+	public static int readIntInRange(String message, int min, int max) {
+		return max;
+
+	}
 	public static int getHateNum() {
 		int hate = 0;
 		System.out.print("阿文...請輸入你討厭哪個數字?(1~9)：");
@@ -37,7 +40,7 @@ public class Hw3_3 {
 				if (hate >= 1 && hate <= 9) {
 					break;
 				} else {
-					System.out.print("請輸入(0~9)的整數：");
+					System.out.print(" 錯誤：只能輸入 1~9 之間的數字，請重新輸入：");
 				}
 			} else {
 				System.out.print("請輸入有效整數：");

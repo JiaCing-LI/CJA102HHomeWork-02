@@ -1,5 +1,6 @@
 package hw3;
 
+import java.util.Random;
 import java.util.Scanner;
 public class Hw3_2 {
 	// class GuessNuberGame
@@ -12,15 +13,16 @@ public class Hw3_2 {
 	 */
 	public static void main(String[] args) {
 		startGuessNumberGame();
-		startGuessNumberGame2();
+		//startGuessNumberGame2();
 	}
 	/**
 	 * 數字猜測（0~9）
 	 */
 	public static void startGuessNumberGame() {
 		Scanner userGuess = new Scanner(System.in);
-
-		int answer = (int) (Math.random() * 10);
+		Random answerR = new Random();
+		int answer = answerR.nextInt(10);
+		//int answer = (int) (Math.random() * 10);
 		int guess = -1;
 		while (true) {
 			System.out.println("開始猜數字吧(0~9)");
