@@ -3,8 +3,8 @@ package hw7;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class FileStats {
 	public static void main(String[] args) {
@@ -17,8 +17,13 @@ public class FileStats {
 		long byteCount = file.length(); // 檔案大小（位元組）
 		int charCount = 0; // 字元總數
 		int lineCount = 0; // 行數
+		//BufferedReader
+		//　└── InputStreamReader（字節轉字元）
+		//　　└── FileInputStream（實際從檔案讀位元組）
 		try (FileInputStream fis = new FileInputStream(file);
-				BufferedReader br = new BufferedReader(new FileReader(file))) {
+				BufferedReader br = new BufferedReader(
+						new InputStreamReader(fis)))//InputStreamReader(fis, "UTF-8"))
+		{
 			String line;
 			//StringBuilder jsonText = new StringBuilder();
 			while ((line = br.readLine()) != null) {
