@@ -11,13 +11,13 @@ public class CollectionFactory {
 		Collection<Object> col = new ArrayList<>() {
 			private static final long serialVersionUID = 1L;
 		};
-		col.add(new Integer(100));
-		col.add(new Double(3.14));
-		col.add(new Long(21L));
-		col.add(new Short("100"));
-		col.add(new Double(5.1));
+		col.add(Integer.valueOf(100));
+		col.add(Double.valueOf(3.14));
+		col.add(Long.valueOf(21L));
+		col.add(Short.valueOf("100"));
+		col.add(Double.valueOf(5.1));
 		col.add("Kitty");
-		col.add(new Integer(100));
+		col.add(Integer.valueOf(100));
 		col.add(new Object());
 		col.add("Snoopy");
 		col.add(new BigInteger("1001"));

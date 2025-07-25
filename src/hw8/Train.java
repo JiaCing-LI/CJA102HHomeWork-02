@@ -62,7 +62,7 @@ public class Train implements Comparable<Train> {
 	@Override
 	public String toString() {
 		return String.format(
-				"班次:%d, 車種:%s, 出發地:%s, 目的地:%s, 票價:%.0f",
+				"班次:%d,車種:%s,出發地:%s,目的地:%s,票價:%.0f",
 				number,
 				type,
 				start,
